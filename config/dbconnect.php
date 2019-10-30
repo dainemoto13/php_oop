@@ -20,7 +20,9 @@ class DbManager
       ];
       $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
       try {
-          $dbh = new PDO($dsn, $user, $password, $options);
+        //   class化をした場合 $dbhそのままに代入ではなく、$dbhを$thisに変更してthis->dbhからclass化する↓
+        //   $dbh = new PDO($dsn, $user, $password, $options);
+        $this->dbh = new PDO($dsn, $user, $password, $options);
       } catch (\PDOException $e) {
           throw new \PDOException($e->getMessage(), (int) $e->getCode());
       }

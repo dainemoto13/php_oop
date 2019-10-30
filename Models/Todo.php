@@ -1,5 +1,5 @@
 <?php
-require_once('config/dbconnect.php');
+require_once ('config/dbconnect.php');
 // require_once 'config/dbconnect.php';
 
 class Todo
@@ -16,5 +16,13 @@ class Todo
     {
         $stmt = $this->db_manager->dbh->prepare('INSERT INTO '.$this->table.' (name) VALUES (?)');
         $stmt->execute([$name]);
+    }
+    public function all()
+    {
+        // dbconnect.phpの$dbh = new PDO が $this->dbh = new PDO のclass化表記になっていなかったのでFatal error(スペルミス)のエラーが発生した↓
+        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM '.$this->table);
+        $stmt->execute();
+        $tasks = $stmt->fetchAll();
+        return $tasks;
     }
 }

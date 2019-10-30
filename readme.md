@@ -2,11 +2,11 @@
 
 目次
 
-1.下準備
-2.DBの設定
-3.todoクラスの作成
-4.データの登録(Create)
-5.一覧の出力(Read)
+1. [下準備](##下準備)
+2. DBの設定
+3. todoクラスの作成
+4. データの登録(Create)
+5. 一覧の出力(Read)
 
 ## 下準備
 
@@ -15,22 +15,24 @@
 [元repositoryはこちら](https://github.com/camillenexseed/56php_oop)
 
 初期段階でリポジトリのディレクトリ名と用意するファイル
-
+```
 php_oop/
   ├ index.php
   └ assets/css/(元リポジトリのファイルをコピペ)
     ├ reset.css
     └ style.css
+```
 
 **ファーストコミット**
 
 ファイルを作成したら、ファーストコミットします。initial commitとfirst commitどちらでOKです。
-
+```
 initial commit
 first commit
-
+```
 **index.phpとDB読み込みようにコードを追加**
 
+```
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -45,9 +47,10 @@ first commit
 
 </body>
 </html>
+```
 
 config/dbconnect.phpを作成し、以下コードを追加。
-
+```
 <?php
 
 //DBに接続
@@ -68,8 +71,8 @@ try {
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int) $e->getCode());
 }
-
-<a href="# ToDo App を作ろう">▲先頭に戻る▲</a>
+```
+[▲先頭に戻る▲](#)
 
 ## SQLと接続するクラス作成
 

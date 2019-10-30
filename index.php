@@ -1,3 +1,16 @@
+<?php
+    require_once 'function.php';
+    // require_once('Models/Todo.php');
+    require_once 'Models/Todo.php';
+
+    $todo = new Todo();
+    //DBからデータを全件取得
+    $tasks = $todo->all();
+
+    // echo '<pre>';
+    // var_dump($tasks);
+    // exit();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -33,8 +46,39 @@
             </form>
         </section>
         <section>
-
-        </section>
+        <section class="mt-5">
+        <table class="table table-hover">
+          <thead>
+            <tr class="bg-primary text-light">
+                <th class=>TODO</th>
+                <th>DUE DATE</th>
+                <th>STATUS</th>
+                <th></th>
+                <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach ($tasks as
+              $task):?>
+              <tr>
+                <td>
+                <?php echo $task['name']; ?>
+                </td>
+                <td>
+                <?php echo $task['due_date']; ?>
+                </td>
+                <td>NOT YET</td>
+                <td>
+                    <a class="text-success" href="">EDIT</a>
+                </td>
+                <td>
+                    <a class="text-danger" href="">DELETE</a>
+                </td>
+              </tr>
+              <?php endforeach; ?>
+          </tbody>
+        </table>
+      </section>
     </main>
 </body>
 </html>

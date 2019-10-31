@@ -42,6 +42,7 @@ class Todo
         //削除するためのメソッド
         public function delete($id)
         {
+            // 'DELETE FROM○'がなければシンタックスエラーが起こる '○WHERE
             $stmt = $this->db_manager->dbh->prepare('DELETE FROM ' . $this->table .' WHERE id = ?');
             $stmt->execute([$id]);
         }

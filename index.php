@@ -68,7 +68,10 @@
             <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
             </td>
             <td>
-                <a class="text-danger" href="">DELETE</a>
+                <!-- タスク内容など隠した状態で送信しなくていい場合$GET↓ -->
+                <!-- foreachの中で$taskの中のidを持ってこれる -->
+                <a class="text-danger" href="delete.php?id=<?php echo h($task['id']);
+                ?>">DELETE</a>
             </td>
         </tr>
         <?php endforeach; ?>

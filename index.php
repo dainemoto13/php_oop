@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
 <header class="px-5 bg-primary">
@@ -62,16 +64,16 @@
         <?php foreach ($tasks as $task):?>
         <tr>
             <td><?php echo h($task['name']); ?></td>
-            <td><?php echo h($task['due_date']); ?></td>
+            <td><?php echo date("Y/m/d", strtotime(h($task['due_date']))); ?></td>
             <td>NOT YET</td>
             <td>
-            <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
+            <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>"><i class="material-icons">autorenew</i></a>
             </td>
             <td>
                 <!-- タスク内容など隠した状態で送信しなくていい場合$GET↓ -->
                 <!-- foreachの中で$taskの中のidを持ってこれる -->
                 <a class="text-danger" href="delete.php?id=<?php echo h($task['id']);
-                ?>">DELETE</a>
+                ?>"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
         <?php endforeach; ?>

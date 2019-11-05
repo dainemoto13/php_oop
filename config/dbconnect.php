@@ -22,6 +22,7 @@ class DbManager
       try {
         //   class化をした場合 $dbhそのままに代入ではなく、$dbhを$thisに変更してthis->dbhからclass化する↓
         //   $dbh = new PDO($dsn, $user, $password, $options);
+        //PDO もともとphpが持ってる設計図
         $this->dbh = new PDO($dsn, $user, $password, $options);
       } catch (\PDOException $e) {
           throw new \PDOException($e->getMessage(), (int) $e->getCode());

@@ -40,10 +40,10 @@
     <section>
         <form class="form-row justify-content-center" action="create.php" method="POST">
             <div class="col-10 col-md-6 py-2">
-                <input type="text" class="form-control" placeholder="ADD TODO" name="task">
+                <input id="input-task" type="text" class="form-control" placeholder="ADD TODO" name="task">
             </div>
             <div class="py-2 col-md-3 col-10">
-                <button type="submit" class="col-12 btn btn-primary">ADD</button>
+                <button id="add-button" type="submit" class="col-12 btn btn-primary">ADD</button>
             </div>
         </form>
     </section>
@@ -79,5 +79,7 @@
     </table>
     </section>
 </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./assets/js/app.js"></script>
 </body>
 </html>

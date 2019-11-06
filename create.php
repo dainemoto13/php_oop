@@ -14,7 +14,7 @@ $latestId = $todo->create($task);
 //最新のタスクを取得
 $latestTask = $todo->get($latestId);
 
-//最新のタスクをjson形式にして通信元に返す
+//最新のタスクをjson形式にして(dataとして)通信元に返す
 echo json_encode($latestTask);
 
 //ajax使ってるので不要

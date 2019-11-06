@@ -70,7 +70,9 @@
             <td>
                 <!-- タスク内容など隠した状態で送信しなくていい場合$GET↓ -->
                 <!-- foreachの中で$taskの中のidを持ってこれる -->
-                <a class="text-danger" href="delete.php?id=<?php echo h($task['id']);
+                <!-- data-idカスタム属性 -->
+                <a data-id="<?php echo h($task['id']);
+                ?>" class="text-danger delete-button" href="delete.php?id=<?php echo h($task['id']);
                 ?>">DELETE</a>
             </td>
         </tr>
